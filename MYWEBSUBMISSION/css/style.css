@@ -1,0 +1,627 @@
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  padding: 0;
+}
+
+li,
+a,
+button {
+  font-family: "Space Mono", sans-serif;
+  text-decoration: none;
+  color: #ebebeb;
+}
+
+body {
+  font-family: "Space Mono", sans-serif;
+  min-height: 100vh;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar-container {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #1a1a1a;
+  z-index: 100;
+  overflow: hidden;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 25px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  background-color: #ebebeb;
+  height: 3px;
+  width: 100%;
+  border-radius: 2px;
+  transition: all 0.3s ease-in-out;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  transition: transform 0.3s ease-in-out;
+}
+
+.logo {
+  font-size: 1.2em;
+  font-weight: 700;
+  padding: 1rem;
+  color: #ebebeb;
+  letter-spacing: 0.3rem;
+}
+
+.navbar ul {
+  width: 100%;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+}
+
+.navbar li a {
+  font-weight: 700;
+  font-size: 0.8rem;
+  display: block;
+  width: 100%;
+  position: relative;
+  padding: 1em 0.1em;
+  letter-spacing: 0.3rem;
+}
+
+.navbar li a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0.15em;
+  background-color: orange;
+  opacity: 0;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: all 300ms ease;
+}
+
+.navbar li a:hover::after,
+.navbar li a:focus::after {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  color: #1a1a1a;
+  width: 100%;
+  overflow: hidden;
+}
+
+.content-description {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  text-align: justify;
+  background-color: #ebebeb;
+  margin: auto;
+  padding: 5em;
+  width: 100%;
+}
+
+.mydescription {
+  flex: 1;
+  text-align: justify;
+  margin: 0.5em 5em;
+  width: 100%;
+}
+
+.mydescription .animationh1 {
+  display: inline-block;
+}
+
+.content-description .title {
+  width: fit-content;
+  overflow: hidden;
+  border-right: 0.15em solid orange;
+  white-space: nowrap;
+  letter-spacing: 0.15em;
+  animation: typing 3.5s steps(17, end) infinite, blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  50% {
+    width: 100%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: orange;
+  }
+}
+
+.content-description .content-image {
+  display: flex;
+  flex: 1;
+  width: 100%;
+}
+
+.content-description .content-image img {
+  width: 400px;
+  height: auto;
+  border-radius: 25px;
+  margin: 0.5em 5em;
+  object-fit: cover;
+}
+
+.content-description .content-button {
+  font-weight: 700;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 45px;
+  width: 150px;
+  margin: 5em 0em;
+  padding: 5px 5px;
+  font-size: 15px;
+  letter-spacing: 0.2em;
+  color: #1a1a1a;
+  border: 2px #1a1a1a solid;
+  border-radius: 0.5em;
+  text-transform: uppercase;
+  z-index: 1;
+  cursor: pointer;
+  transition: 0.08s ease-in;
+}
+
+.content-description .content-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: orange;
+  z-index: -1;
+  transition: width 0.4s ease;
+}
+
+.content-description .content-button:hover::before {
+  width: 100%;
+}
+
+.content-description .content-button:hover {
+  color: #ebebeb;
+  border: 2px orange solid;
+}
+
+.content .article1 {
+  display: flex;
+  flex: 1;
+  background-color: #1a1a1a;
+}
+
+.content .article1 .aboutmearticle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 4rem;
+  padding: 5em;
+  height: 40em;
+}
+
+.content .article1 .aboutmearticle .articleclass {
+  display: flex;
+  flex-direction: column;
+  color: #ebebeb;
+  margin: 0rem 5rem;
+  padding: 0.5rem 5rem;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.content .article1 .aboutmearticle .articleclass .titleaboutme {
+  font-size: 1em;
+  text-transform: uppercase;
+  margin-bottom: 1.5em;
+  letter-spacing: 0.2em;
+  line-height: 2em;
+  position: relative;
+}
+
+.content .article1 .aboutmearticle .articleclass .titleaboutme::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: orange;
+  animation: kiri-ke-kanan 3s infinite ease-in;
+}
+
+@keyframes kiri-ke-kanan {
+  0% {
+    width: 0;
+  }
+  50% {
+    width: 100%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+.content .article1 .aboutmearticle .articleclass p {
+  font-size: 0.8em;
+  white-space: pre-line;
+}
+
+.content .article2 {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  background-color: #ebebeb;
+}
+
+.content .portoarticle {
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5rem;
+  padding: 4rem;
+}
+
+.content .portoarticle .porto {
+  color: #1a1a1a;
+  text-transform: uppercase;
+  font-size: 1em;
+}
+
+.content .portoarticle .swipe {
+  display: none;
+}
+
+.content .portoarticle .porto-content-image {
+  display: flex;
+  margin: 1em auto;
+  padding: 1rem;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.content .portoarticle .porto-content-image img {
+  border-radius: 1em;
+  margin: 0.5rem;
+  width: 300px;
+  height: auto;
+  object-fit: cover;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+.content .portoarticle .porto-content-image img:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+  opacity: 0.9;
+  margin: 0rem 2rem;
+}
+
+
+aside {
+  position: fixed;
+  inset-block: 0;
+  inset-inline-start: 0;
+  overflow: auto;
+}
+
+aside .sidebarmenu {
+  height: 100%;
+  display: flex;
+}
+
+aside .sidebarmenu ul {
+  padding: 1rem;
+  width: 100%;
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
+  margin: auto;
+  background-color: #1a1a1a;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+aside .sidebarmenu li {
+  list-style: none;
+}
+
+aside .sidebarmenu li a {
+  transition: 0.3s ease-in-out all;
+  color: #ebebeb;
+
+}
+
+aside .sidebarmenu li a:hover {
+  color: orange;
+}
+
+aside .sidebarmenu li a:focus-within {
+  color: orange;
+}
+
+footer .footer-container .footer-content {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #1a1a1a;
+  padding: 1rem;
+}
+
+.footer-container .footer-content .footer-title {
+  color: #ebebeb;
+  text-transform: uppercase;
+  font-size: 0.7em;
+  letter-spacing: 0.2em;
+}
+
+.footer-container .footer-content .footer-ul {
+  list-style: none;
+  display: flex;
+  gap: 3rem;
+  justify-content: center;
+  align-items: center;
+}
+
+/* RESPONSIVE */
+
+@media screen and (max-width: 768px) {
+  .navbar-container {
+    top: 0;
+    position: sticky;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-menu {
+    position: fixed;
+    top: 70px;
+    right: 0;
+    background-color: #1a1a1a;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 0;
+    gap: 1.5rem;
+    transform: translateX(100%);
+  }
+
+  .nav-menu.active {
+    transform: translateX(0%);
+  }
+
+  aside {
+    display: none;
+  }
+
+  .content .content-description {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 2rem;
+    flex-direction: column-reverse;
+  }
+
+  .content .content-description .mydescription {
+    display: flex;
+    margin: 2rem;
+    text-align: justify;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 20rem;
+    padding: 0 2rem;
+    font-size: 0.9rem;
+  }
+
+  .content .content-description .mydescription .animationh1 {
+    display: inline-block;
+  }
+
+  .mydescription .animationh1 .title {
+    font-size: 1.2rem;
+    width: fit-content;
+  }
+
+  .content-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .content-image {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .content-description .content-image img {
+    display: flex;
+    width: 100%;
+    border-radius: 0.5rem;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .content .article1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    margin: 0;
+  }
+
+  .content .article1 .aboutmearticle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    text-align: justify;
+    padding: 0;
+    margin: 2.5rem;
+  }
+
+  .content .article1 .aboutmearticle .articlep1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+    margin: 0;
+  }
+
+  .content .article1 .aboutmearticle .articlep1 .articleclass {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+    text-align: justify;
+    font-size: 0.8rem;
+    line-height: 1.2rem;
+    white-space: pre-line;
+  }
+
+  .content .article2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .content .article2 .portoarticle {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .content .article2 .portoarticle .porto {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .content .article2 .portoarticle .swipe {
+    display: flex;
+    font-size: 0.7rem;
+    color: #1a1a1a;
+    text-transform: uppercase;
+  }
+
+  .content .article2 .portoarticle .porto-content-image {
+    display: flex;
+    gap: 1rem;
+    width: 500px;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+  }
+
+  .content .portoarticle .porto-content-image img:active {
+    transform: none;
+    box-shadow: none;
+    opacity: 1;
+    margin: 0.5rem;
+  }
+
+  .content .article2 .portoarticle .porto-content-image .image1 {
+    scroll-snap-align: center;
+    flex-shrink: 0;
+    width: 500px;
+    border-radius: 14px;
+    text-align: center;
+  }
+
+  footer .footer-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background-color: #1a1a1a;
+    padding: 1rem;
+  }
+
+  footer .footer-container .footer-content {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    justify-content: space-evenly;
+  }
+
+  footer .footer-container .footer-content .footer-title {
+    justify-content: center;
+    font-size: 0.5rem;
+  }
+
+  footer .footer-container .footer-content .footer-ul {
+    gap: 1.5rem;
+    font-size: 0.6rem;
+  }
+}
