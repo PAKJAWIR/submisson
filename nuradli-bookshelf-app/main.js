@@ -2,7 +2,7 @@
 const starfields = document.querySelectorAll(".starfield");
 
 function createStarfield(starfieldElement) {
-  for (let i = 0; i < 200; i++) {
+  for (let i = 0; i < 100; i++) {
     const star = document.createElement("div");
     star.classList.add("star");
     star.style.left = `${Math.random() * 100}%`;
