@@ -53,6 +53,21 @@ window.addEventListener("scroll", function () {
   }
 });
 
+// SEARCHBAR ON SCROLL
+const searchBarShow = document.getElementById("searchbarshow"); // Pastikan ID sesuai
+
+window.addEventListener("scroll", function () {
+  if (window.scrollY > 900) {
+    searchBarShow.classList.add("show2");
+    searchBarShow.classList.remove("show");
+  } else if (window.scrollY > 100) {
+    searchBarShow.classList.add("show");
+    searchBarShow.classList.remove("show2");
+  } else {
+    searchBarShow.classList.remove("show", "show2");
+  }
+});
+
 // BOOK MANAGEMENT SYSTEM
 document.addEventListener("DOMContentLoaded", function () {
   // Deklarasi Variabel
