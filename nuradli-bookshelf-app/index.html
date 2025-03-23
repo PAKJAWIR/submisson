@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MY BOOKSHELF</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <header>
+      <div class="navbar">
+        <h1 class="titlenav">BOOKSHELF APP</h1>
+        <nav class="navbarpar">
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#bukuku">My Book</a></li>
+            <li><a href="#addbooklink">Add Book</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <section class="jumbotron">
+        <div class="starfield">
+          <div class="titlemain">
+            <h1>Selamat datang di bookshelf app!</h1>
+            <p>Budayakan membaca karena membaca adalah jendela dunia!</p>
+            <a href="#bookForm" class="buttontitle">AYO MULAI!</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- My Collection -->
+      <section id="bukuku" class="collectionbook">
+        <div class="starfield">
+          <div class="mybookcollection">
+            <h1>Koleksi Bukuku</h1>
+            <div class="parentcardbook">
+              <div id="belumdibaca" class="belumdibacabk" data-testid="incompleteBookList">
+                <h3>Buku yang belum kamu baca</h3>
+                <p id="ntfblmdbc"></p>
+                <div class="blmdbccardprnt" id="unreadBooks"></div>
+              </div>
+              <div class="sudahdibacabk" data-testid="completeBookList">
+                <h3>Buku yang sudah kamu baca</h3>
+                <p id="ntfsdhdbc"></p>
+                <div class="sdhdbccardprnt" id="readBooks"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Add Books -->
+      <section class="addbook" id="addbooklink">
+        <div class="starfield2">
+          <div class="addnewbook">
+            <div class="formcss">
+              <h2>Tambah Buku Baru</h2>
+              <form id="bookForm" data-testid="bookForm">
+                <div>
+                  <label for="bookFormTitle">Judul</label>
+                  <input id="bookFormTitle" type="text" required data-testid="bookFormTitleInput" />
+                </div>
+                <div>
+                  <label for="bookFormAuthor">Penulis</label>
+                  <input id="bookFormAuthor" type="text" required data-testid="bookFormAuthorInput" />
+                </div>
+                <div>
+                  <label for="bookFormYear">Tahun</label>
+                  <input id="bookFormYear" type="number" required data-testid="bookFormYearInput" />
+                </div>
+                <div>
+                  <label for="bookFormIsComplete">Selesai dibaca?</label>
+                  <input id="bookFormIsComplete" type="checkbox" data-testid="bookFormIsCompleteCheckbox" />
+                </div>
+                <button type="submit" id="buttonadd" data-testid="bookFormSubmitButton">Tambah Buku</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+      <form data-testid="searchBookForm" class="searchbar" id="searchbarshow">
+        <input placeholder="Search your book" type="search" id="searchbar" data-testid="searchBookFormTitleInput" />
+        <button id="searchbutton" data-testid="searchBookFormSubmitButton">
+          <i class="fas fa-search"></i>
+        </button>
+      </form>
+
+      <button id="backToTop"><i class="fas fa-arrow-up"></i></button>
+    </main>
+
+    <footer>
+      <section class="secfoot">
+        <div class="starfield2">
+          <div class="cpfoot">
+            <h3>&copy;Nuradli. All right reserved.</h3>
+          </div>
+        </div>
+      </section>
+    </footer>
+    <script src="main.js"></script>
+  </body>
+</html>

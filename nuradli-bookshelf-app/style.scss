@@ -1,0 +1,539 @@
+// Variabel Warna
+$primary-color: rgb(19, 19, 19);
+$secondary-color: white;
+$primary-text-color: whitesmoke;
+$secondary-text-color: black;
+$hover-color: orange;
+$secondary-hover-color: rgb(107, 107, 194);
+$navbar-bg: rgb(252, 252, 252);
+$border-bg: black;
+
+* {
+  font-family: "Inconsolata", Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+// HEADER
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: $navbar-bg;
+  padding: 3em;
+
+  h1 {
+    font-weight: bold;
+  }
+
+  .navbarpar ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+
+    li a {
+      text-decoration: none;
+      color: $primary-color;
+      font-size: 1em;
+
+      &:hover {
+        color: $secondary-hover-color;
+        transition: all 0.2s ease-in-out;
+      }
+    }
+  }
+}
+
+// MAIN
+
+// JUMBOTRON
+
+.jumbotron {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  background-color: $primary-color;
+  padding: 10em;
+
+  .starfield {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+
+    .titlemain {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: $primary-text-color;
+      padding: 6em;
+      margin: 2em;
+
+      h1 {
+        text-transform: uppercase;
+      }
+
+      .buttontitle {
+        margin-top: 3em;
+        padding: 1em 2em;
+        border-radius: 0.5em;
+        background-color: $secondary-color;
+        color: $primary-color;
+        font-weight: bold;
+        cursor: pointer;
+        border: none;
+        transition: all 0.3s ease-in-out;
+        text-decoration: none;
+
+        &:hover {
+          background-color: $secondary-hover-color;
+          color: $primary-text-color;
+          box-shadow: 0 0 20px 10px $secondary-hover-color;
+        }
+      }
+    }
+  }
+}
+
+// BOOKS COLLECTION
+.collectionbook {
+  position: relative;
+
+  .starfield {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+  }
+
+  .mybookcollection {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 3em;
+    height: auto;
+    padding: 3em;
+    background-color: $primary-color;
+
+    h1 {
+      text-align: center;
+      color: $secondary-color;
+      text-transform: uppercase;
+    }
+
+    p {
+      text-align: center;
+      color: $secondary-color;
+    }
+
+    .parentcardbook {
+      display: flex;
+      gap: 1em;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      width: 100%;
+      .belumdibacabk {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        padding: 1em;
+        margin: 1em;
+        width: 100%;
+        height: auto;
+
+        h3 {
+          text-align: center;
+          color: $primary-text-color;
+          text-transform: uppercase;
+        }
+
+        p {
+          margin-top: 0.5em;
+          text-align: center;
+          color: $primary-text-color;
+        }
+        .blmdbccardprnt {
+          display: grid;
+          align-items: center;
+          justify-content: center;
+          grid-template-columns: repeat(auto-fit, minmax(10em, 1fr));
+          gap: 1em;
+          padding: 3em;
+          margin-top: 1em;
+          width: 100%;
+          height: auto;
+        }
+      }
+
+      .sudahdibacabk {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        padding: 1em;
+        margin: 1em;
+        width: 100%;
+        height: auto;
+
+        h3 {
+          text-align: center;
+          text-transform: uppercase;
+          color: $primary-text-color;
+        }
+
+        p {
+          margin-top: 0.5em;
+          text-align: center;
+          color: $primary-text-color;
+        }
+        .sdhdbccardprnt {
+          display: grid;
+          align-items: center;
+          justify-content: center;
+          grid-template-columns: repeat(auto-fit, minmax(10em, 1fr));
+          gap: 1em;
+          padding: 3em;
+          margin-top: 1em;
+          width: 100%;
+          height: auto;
+        }
+      }
+    }
+  }
+  .cardbook {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 0.1em solid $secondary-color;
+    border-radius: 0.5em;
+    padding: 1em;
+    width: 100%;
+    gap: 1em;
+    margin: 0;
+
+    h3 {
+      font-weight: 900;
+      width: 100%;
+      font-size: 1.4em;
+      color: $primary-text-color !important;
+      text-align: center;
+    }
+
+    p {
+      text-align: center;
+      color: $primary-text-color !important;
+    }
+
+    .cardbookbtn {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      gap: 0.5em;
+      width: 100%;
+
+      button {
+        text-transform: uppercase;
+        background-color: $primary-color;
+        border-radius: 0.5em;
+        color: $primary-text-color;
+        border: 0.1em solid $secondary-color;
+        padding: 1em;
+        width: 100%;
+        height: auto;
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+          background-color: $secondary-color;
+          color: $secondary-text-color;
+        }
+      }
+    }
+  }
+}
+
+// ADD BOOKS
+
+.addbook {
+  position: relative;
+
+  .starfield2 {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+  }
+
+  .addnewbook {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: $secondary-color;
+
+    h2 {
+      color: $primary-color;
+      text-align: center;
+      text-transform: uppercase;
+      margin-bottom: 1em;
+    }
+  }
+
+  .formcss {
+    margin: auto;
+    padding: 4em;
+
+    form {
+      background-color: $secondary-color;
+      color: $primary-color;
+      padding: 5em;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 5em;
+
+      input {
+        padding: 0.5em;
+        background-color: $primary-text-color;
+        border-style: none;
+        border-radius: 0.5em;
+      }
+
+      input[type="checkbox"] {
+        width: 1em;
+        height: 1em;
+        accent-color: $primary-color;
+        cursor: pointer;
+        transition: all 0.2s ease-in-out;
+      }
+
+      input[type="checkbox"]:hover {
+        transform: scale(1.1);
+      }
+
+      button {
+        padding: 1em;
+        border-radius: 0.5em;
+        background-color: $primary-color;
+        color: $primary-text-color;
+        text-transform: uppercase;
+        transition: all 0.2s ease-in-out;
+
+        &:hover {
+          cursor: pointer;
+          background-color: $secondary-color;
+          color: $secondary-text-color;
+        }
+      }
+    }
+  }
+}
+
+// SEARCHBAR
+.searchbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  gap: 0.5em;
+  bottom: 20px;
+  right: 70px;
+  z-index: 100;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+
+  input {
+    background-color: $secondary-color;
+    color: $secondary-text-color;
+    position: relative;
+    padding: 0.9em;
+    border-radius: 1em;
+    cursor: pointer;
+    border: none;
+    transition: all 0.2s ease-in-out;
+    font-size: 0.9em;
+  }
+  button {
+    background-color: $secondary-color;
+    color: $secondary-text-color;
+    position: relative;
+    padding: 0.9em;
+    border: none;
+    font-size: 0.9em;
+    border-radius: 1em;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+  }
+}
+
+.searchbar.show {
+  opacity: 1;
+  pointer-events: auto;
+
+  input {
+    &:hover {
+      background-color: $primary-color;
+      color: $primary-text-color;
+      border: 0.1em solid $secondary-color;
+    }
+  }
+  button {
+    &:hover {
+      background-color: $primary-color;
+      color: $primary-text-color;
+      border: 0.1em solid $secondary-color;
+    }
+  }
+}
+
+.searchbar.show2 {
+  opacity: 1;
+
+  input {
+    background-color: $primary-color;
+    color: $primary-text-color;
+    pointer-events: auto;
+
+    &:hover {
+      &:hover {
+        background-color: $secondary-color;
+        color: $secondary-text-color;
+        border: 0.1em solid $primary-color;
+      }
+    }
+  }
+
+  button {
+    background-color: $primary-color;
+    color: $primary-text-color;
+    pointer-events: auto;
+    &:hover {
+      background-color: $secondary-color;
+      color: $secondary-text-color;
+      border: 0.1em solid $primary-color;
+    }
+  }
+}
+
+// BACK-TO-TOP
+
+#backToTop {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 0.9em;
+  font-size: 0.9em;
+  border: none;
+  border-radius: 1em;
+  cursor: pointer;
+  pointer-events: none;
+  transition: all 0.2s ease-in-out;
+  opacity: 0;
+  z-index: 100;
+}
+
+#backToTop.show {
+  opacity: 1;
+  pointer-events: auto;
+  background-color: $secondary-color;
+  color: $primary-color;
+
+  &:hover {
+    background-color: $primary-color;
+    color: $primary-text-color;
+    border: 0.1em solid $secondary-color;
+  }
+}
+
+#backToTop.show2 {
+  opacity: 1;
+  pointer-events: auto;
+  background-color: $primary-color;
+  color: $primary-text-color;
+
+  &:hover {
+    background-color: $secondary-color;
+    color: $secondary-text-color;
+    border: 0.1em solid $primary-color;
+  }
+}
+
+// FOOTER
+.secfoot {
+  position: relative;
+  background-color: $secondary-color;
+
+  .starfield2 {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    .cpfoot {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 3em;
+
+      h3 {
+        text-align: center;
+        color: $primary-color;
+        text-transform: uppercase;
+        font-weight: 500;
+        font-size: 1em;
+      }
+    }
+  }
+}
+
+// BINTANG
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.2;
+  }
+}
+
+.star {
+  position: absolute;
+  background-color: $secondary-color; /* Warna bintang */
+  border-radius: 50%; /* Bentuk lingkaran */
+  animation: twinkle infinite ease-in-out; /* Animasi berkedip */
+}
+
+.star2 {
+  position: absolute;
+  background-color: $primary-color; /* Warna bintang */
+  border-radius: 50%; /* Bentuk lingkaran */
+  animation: twinkle infinite ease-in-out; /* Animasi berkedip */
+}

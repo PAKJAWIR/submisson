@@ -1,0 +1,466 @@
+* {
+  font-family: "Inconsolata", Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: rgb(252, 252, 252);
+  padding: 3em;
+}
+.navbar h1 {
+  font-weight: bold;
+}
+.navbar .navbarpar ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+}
+.navbar .navbarpar ul li a {
+  text-decoration: none;
+  color: rgb(19, 19, 19);
+  font-size: 1em;
+}
+.navbar .navbarpar ul li a:hover {
+  color: rgb(107, 107, 194);
+  transition: all 0.2s ease-in-out;
+}
+
+.jumbotron {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  background-color: rgb(19, 19, 19);
+  padding: 10em;
+}
+.jumbotron .starfield {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+}
+.jumbotron .starfield .titlemain {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: whitesmoke;
+  padding: 6em;
+  margin: 2em;
+}
+.jumbotron .starfield .titlemain h1 {
+  text-transform: uppercase;
+}
+.jumbotron .starfield .titlemain .buttontitle {
+  margin-top: 3em;
+  padding: 1em 2em;
+  border-radius: 0.5em;
+  background-color: white;
+  color: rgb(19, 19, 19);
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s ease-in-out;
+  text-decoration: none;
+}
+.jumbotron .starfield .titlemain .buttontitle:hover {
+  background-color: rgb(107, 107, 194);
+  color: whitesmoke;
+  box-shadow: 0 0 20px 10px rgb(107, 107, 194);
+}
+
+.collectionbook {
+  position: relative;
+}
+.collectionbook .starfield {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+}
+.collectionbook .mybookcollection {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 3em;
+  height: auto;
+  padding: 3em;
+  background-color: rgb(19, 19, 19);
+}
+.collectionbook .mybookcollection h1 {
+  text-align: center;
+  color: white;
+  text-transform: uppercase;
+}
+.collectionbook .mybookcollection p {
+  text-align: center;
+  color: white;
+}
+.collectionbook .mybookcollection .parentcardbook {
+  display: flex;
+  gap: 1em;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+.collectionbook .mybookcollection .parentcardbook .belumdibacabk {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1em;
+  margin: 1em;
+  width: 100%;
+  height: auto;
+}
+.collectionbook .mybookcollection .parentcardbook .belumdibacabk h3 {
+  text-align: center;
+  color: whitesmoke;
+  text-transform: uppercase;
+}
+.collectionbook .mybookcollection .parentcardbook .belumdibacabk p {
+  margin-top: 0.5em;
+  text-align: center;
+  color: whitesmoke;
+}
+.collectionbook .mybookcollection .parentcardbook .belumdibacabk .blmdbccardprnt {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fit, minmax(10em, 1fr));
+  gap: 1em;
+  padding: 3em;
+  margin-top: 1em;
+  width: 100%;
+  height: auto;
+}
+.collectionbook .mybookcollection .parentcardbook .sudahdibacabk {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1em;
+  margin: 1em;
+  width: 100%;
+  height: auto;
+}
+.collectionbook .mybookcollection .parentcardbook .sudahdibacabk h3 {
+  text-align: center;
+  text-transform: uppercase;
+  color: whitesmoke;
+}
+.collectionbook .mybookcollection .parentcardbook .sudahdibacabk p {
+  margin-top: 0.5em;
+  text-align: center;
+  color: whitesmoke;
+}
+.collectionbook .mybookcollection .parentcardbook .sudahdibacabk .sdhdbccardprnt {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fit, minmax(10em, 1fr));
+  gap: 1em;
+  padding: 3em;
+  margin-top: 1em;
+  width: 100%;
+  height: auto;
+}
+.collectionbook .cardbook {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 0.1em solid white;
+  border-radius: 0.5em;
+  padding: 1em;
+  width: 100%;
+  gap: 1em;
+  margin: 0;
+}
+.collectionbook .cardbook h3 {
+  font-weight: 900;
+  width: 100%;
+  font-size: 1.4em;
+  color: whitesmoke !important;
+  text-align: center;
+}
+.collectionbook .cardbook p {
+  text-align: center;
+  color: whitesmoke !important;
+}
+.collectionbook .cardbook .cardbookbtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 0.5em;
+  width: 100%;
+}
+.collectionbook .cardbook .cardbookbtn button {
+  text-transform: uppercase;
+  background-color: rgb(19, 19, 19);
+  border-radius: 0.5em;
+  color: whitesmoke;
+  border: 0.1em solid white;
+  padding: 1em;
+  width: 100%;
+  height: auto;
+  transition: all 0.3s ease-in-out;
+}
+.collectionbook .cardbook .cardbookbtn button:hover {
+  background-color: white;
+  color: black;
+}
+
+.addbook {
+  position: relative;
+}
+.addbook .starfield2 {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+}
+.addbook .addnewbook {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: white;
+}
+.addbook .addnewbook h2 {
+  color: rgb(19, 19, 19);
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 1em;
+}
+.addbook .formcss {
+  margin: auto;
+  padding: 4em;
+}
+.addbook .formcss form {
+  background-color: white;
+  color: rgb(19, 19, 19);
+  padding: 5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5em;
+}
+.addbook .formcss form input {
+  padding: 0.5em;
+  background-color: whitesmoke;
+  border-style: none;
+  border-radius: 0.5em;
+}
+.addbook .formcss form input[type=checkbox] {
+  width: 1em;
+  height: 1em;
+  accent-color: rgb(19, 19, 19);
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+.addbook .formcss form input[type=checkbox]:hover {
+  transform: scale(1.1);
+}
+.addbook .formcss form button {
+  padding: 1em;
+  border-radius: 0.5em;
+  background-color: rgb(19, 19, 19);
+  color: whitesmoke;
+  text-transform: uppercase;
+  transition: all 0.2s ease-in-out;
+}
+.addbook .formcss form button:hover {
+  cursor: pointer;
+  background-color: white;
+  color: black;
+}
+
+.searchbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  gap: 0.5em;
+  bottom: 20px;
+  right: 70px;
+  z-index: 100;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+.searchbar input {
+  background-color: white;
+  color: black;
+  position: relative;
+  padding: 0.9em;
+  border-radius: 1em;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s ease-in-out;
+  font-size: 0.9em;
+}
+.searchbar button {
+  background-color: white;
+  color: black;
+  position: relative;
+  padding: 0.9em;
+  border: none;
+  font-size: 0.9em;
+  border-radius: 1em;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.searchbar.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+.searchbar.show input:hover {
+  background-color: rgb(19, 19, 19);
+  color: whitesmoke;
+  border: 0.1em solid white;
+}
+.searchbar.show button:hover {
+  background-color: rgb(19, 19, 19);
+  color: whitesmoke;
+  border: 0.1em solid white;
+}
+
+.searchbar.show2 {
+  opacity: 1;
+}
+.searchbar.show2 input {
+  background-color: rgb(19, 19, 19);
+  color: whitesmoke;
+  pointer-events: auto;
+}
+.searchbar.show2 input:hover:hover {
+  background-color: white;
+  color: black;
+  border: 0.1em solid rgb(19, 19, 19);
+}
+.searchbar.show2 button {
+  background-color: rgb(19, 19, 19);
+  color: whitesmoke;
+  pointer-events: auto;
+}
+.searchbar.show2 button:hover {
+  background-color: white;
+  color: black;
+  border: 0.1em solid rgb(19, 19, 19);
+}
+
+#backToTop {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 0.9em;
+  font-size: 0.9em;
+  border: none;
+  border-radius: 1em;
+  cursor: pointer;
+  pointer-events: none;
+  transition: all 0.2s ease-in-out;
+  opacity: 0;
+  z-index: 100;
+}
+
+#backToTop.show {
+  opacity: 1;
+  pointer-events: auto;
+  background-color: white;
+  color: rgb(19, 19, 19);
+}
+#backToTop.show:hover {
+  background-color: rgb(19, 19, 19);
+  color: whitesmoke;
+  border: 0.1em solid white;
+}
+
+#backToTop.show2 {
+  opacity: 1;
+  pointer-events: auto;
+  background-color: rgb(19, 19, 19);
+  color: whitesmoke;
+}
+#backToTop.show2:hover {
+  background-color: white;
+  color: black;
+  border: 0.1em solid rgb(19, 19, 19);
+}
+
+.secfoot {
+  position: relative;
+  background-color: white;
+}
+.secfoot .starfield2 {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+}
+.secfoot .starfield2 .cpfoot {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3em;
+}
+.secfoot .starfield2 .cpfoot h3 {
+  text-align: center;
+  color: rgb(19, 19, 19);
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 1em;
+}
+
+@keyframes twinkle {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.2;
+  }
+}
+.star {
+  position: absolute;
+  background-color: white; /* Warna bintang */
+  border-radius: 50%; /* Bentuk lingkaran */
+  animation: twinkle infinite ease-in-out; /* Animasi berkedip */
+}
+
+.star2 {
+  position: absolute;
+  background-color: rgb(19, 19, 19); /* Warna bintang */
+  border-radius: 50%; /* Bentuk lingkaran */
+  animation: twinkle infinite ease-in-out; /* Animasi berkedip */
+}
+
+/*# sourceMappingURL=style.css.map */
