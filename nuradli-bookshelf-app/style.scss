@@ -22,33 +22,134 @@ html {
 
 // HEADER
 
+// NAVBAR
 .navbar {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: space-around;
+  padding: 2rem 5%;
   background-color: $navbar-bg;
-  padding: 3em;
+  position: relative;
+  z-index: 1000;
 
-  h1 {
-    font-weight: bold;
+  // Logo/Titel
+  .titlenav {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: $primary-color;
   }
 
-  .navbarpar ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 3rem;
+  // Hamburger Icon
+  .hamburger {
+    display: none;
+    cursor: pointer;
+    z-index: 1001;
 
-    li a {
-      text-decoration: none;
-      color: $primary-color;
-      font-size: 1em;
+    .bar {
+      display: block;
+      width: 25px;
+      height: 3px;
+      margin: 5px auto;
+      background-color: $primary-color;
+      transition: all 0.3s ease-in-out;
+    }
 
-      &:hover {
-        color: $secondary-hover-color;
-        transition: all 0.2s ease-in-out;
+    // Animasi saat aktif
+    &.active {
+      .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
       }
+      .bar:nth-child(2) {
+        opacity: 0;
+      }
+      .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+      }
+    }
+  }
+
+  // Menu Navigasi
+  .navbarpar {
+    ul {
+      display: flex;
+      gap: 3rem;
+      list-style: none;
+
+      li {
+        a {
+          color: $primary-color;
+          text-decoration: none;
+          font-weight: 500;
+          transition: color 0.3s ease;
+
+          &:hover {
+            color: $secondary-hover-color;
+          }
+        }
+      }
+    }
+  }
+
+  // Media Query untuk Mobile (<600px)
+  @media screen and (max-width: 600px) {
+    flex-wrap: wrap;
+    padding: 1.5rem 5%;
+
+    // Tampilkan hamburger
+    .hamburger {
+      display: block;
+      order: 2; // Posisikan di sebelah kanan
+    }
+
+    // Sembunyikan menu default
+    .navbarpar {
+      position: absolute;
+      top: 100%;
+      left: -100%;
+      width: 100%;
+      background-color: $navbar-bg;
+      transition: left 0.3s ease;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      padding: 2rem 0;
+      z-index: 999;
+      max-height: calc(100vh - 70px);
+      overflow-y: auto;
+
+      // Tampilkan menu saat aktif
+      &.active {
+        left: 0;
+      }
+
+      ul {
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 0 1rem;
+
+        li {
+          width: 100%;
+          text-align: center;
+
+          a {
+            display: block;
+            padding: 1rem;
+            font-size: 1.1rem;
+            border-radius: 0.5rem;
+
+            &:hover {
+              background-color: rgba($secondary-hover-color, 0.1);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // Media Query untuk Tablet (601px - 900px)
+  @media screen and (min-width: 601px) and (max-width: 900px) {
+    padding: 1.5rem 3%;
+
+    .navbarpar ul {
+      gap: 1.5rem;
     }
   }
 }
@@ -536,4 +637,66 @@ html {
   background-color: $primary-color; /* Warna bintang */
   border-radius: 50%; /* Bentuk lingkaran */
   animation: twinkle infinite ease-in-out; /* Animasi berkedip */
+}
+
+@media screen and (max-width: 600px) {
+  .jumbotron {
+    padding: 1em;
+    margin: 0;
+
+    .titlemain {
+      gap: 1em;
+      min-height: 100vh;
+      padding: 1em !important;
+      flex-wrap: nowrap;
+      align-items: center;
+      justify-content: center;
+      h1,
+      p {
+        text-align: center;
+      }
+
+      h1 {
+        font-size: 1.5em;
+      }
+
+      p {
+        font-size: 1em;
+      }
+    }
+  }
+
+  .collectionbook {
+    .mybookcollection {
+      .parentcardbook {
+        flex-direction: column;
+
+        .belumdibacabk,
+        .sudahdibacabk {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .addbook {
+    .addnewbook {
+      .formcss {
+        min-height: 100vh;
+        justify-content: center;
+        align-items: center;
+
+        form {
+          gap: 2em;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+
+          div {
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
 }

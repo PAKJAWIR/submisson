@@ -32,6 +32,31 @@ function createStarfield2(starfieldElement2) {
 }
 starfields2.forEach(createStarfield2);
 
+// Hamburger Menu Toggle
+const hamburger = document.querySelector(".hamburger");
+const navMenu = document.querySelector(".navbarpar");
+
+hamburger.addEventListener("click", () => {
+  hamburger.classList.toggle("active");
+  navMenu.classList.toggle("active");
+});
+
+// Close menu ketika klik di luar
+document.addEventListener("click", (e) => {
+  if (!e.target.closest(".navbar")) {
+    hamburger.classList.remove("active");
+    navMenu.classList.remove("active");
+  }
+});
+
+// Close menu setelah klik link
+document.querySelectorAll(".navbarpar a").forEach((link) => {
+  link.addEventListener("click", () => {
+    hamburger.classList.remove("active");
+    navMenu.classList.remove("active");
+  });
+});
+
 // BACK-TO-TOP
 const toTop = document.getElementById("backToTop");
 
